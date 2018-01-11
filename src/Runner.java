@@ -13,22 +13,26 @@ public class Runner {
 
 
         String bookTitle;
+        String author;
         do {
-            Book book2 = new Book();
+            System.out.println("Podaj tytuł");
             bookTitle = readOut.nextLine();
-            book2.setTitle(bookTitle);
 
             System.out.println("Podaj autora");
-            String author;
+
             author = readOut.nextLine();
-            book2.setAuthor(author);
-            books.add(new Book(String bookTitle, String author));
+
+            books.add(new Book(bookTitle, author));
 
         }
 
-        while (bookTitle.equals("quit!!"));
+        while (!bookTitle.equals("quit!!"));
 
-        for(int i)
+        for(int i=0; i<books.size();i++){
+            System.out.println(books.get(i).getAuthor());
+            System.out.println(books.get(i).getTitle());
+
+        }
 
     }
 }
