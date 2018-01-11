@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Scanner;
+
 /**
  * Created by dominika on 10.01.18.
  */
@@ -5,8 +8,7 @@ public class Book {
     /**
      * Created by dominika on 12.11.17.
      */
-
-
+        LinkedList<Book> books = new LinkedList<Book>();
         private String title;
         private String author; //
         private boolean read;
@@ -86,5 +88,37 @@ public class Book {
         public void setLastPage(int lastPage) {
             this.lastPage = lastPage;
         }
+
+
+    public  void addBook() {
+
+        Scanner readOut = new Scanner(System.in);
+
+
+
+        System.out.println("Podaj tytuł");
+        this.title = readOut.nextLine();
+
+        System.out.println("Podaj autora");
+        this.author = readOut.nextLine();
+
+        this.books.add(new Book(title, author));
+
+        //int lastBookNumber = books.size();
+        //Book lastBook = books.get(lastBookNumber);
+        //return lastBook;
+        // musi zwrócić typ Book
+        }
+
+    public LinkedList<Book>  getAllBooks(){ return books;}
+
+    public   void readAllBooks (LinkedList<Book> books){ //LinkedList<Book> books
+
+        for(int i=0; i< books.size();i++){
+            System.out.println(books.get(i).getAuthor());
+            System.out.println(books.get(i).getTitle());
+
+        }
+    }
     }
 
